@@ -1,0 +1,226 @@
+/* gloable Style */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Noto Nastaliq Urdu", serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: #EEE;
+}
+
+/* gloable Style */
+/* Start Header */
+h1 {
+    text-align: center;
+    background-color: white;
+    font-size: 20px;
+    padding: 10px 0px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    font-size: 20px;
+    padding: 10px 10px;
+    font-weight: bold;
+    position: fixed;
+    bottom: 0px;
+    text-wrap: wrap;
+    width: 100%;
+}
+
+.guess-game {
+    width: 1000px;
+    margin: 20px auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media (min-width:768px) {
+        position: relative;
+    }
+
+    /* gap: 30px; */
+
+    .game-area {
+        @media (max-width:767px) {
+            position: relative;
+        }
+
+        .control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+
+            .check {
+                flex: 0.7;
+                background-color: red;
+                border: none;
+                border-radius: 5px;
+                color: white;
+                font-size: 17px;
+            }
+
+            .hints {
+                flex: 0.3;
+                background-color: green;
+                border: none;
+                border-radius: 5px;
+                color: white;
+                font-size: 17px;
+
+                span {
+                    margin-right: 10px;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .inputs {
+            >div {
+                height: 60px;
+                margin-bottom: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+
+
+            }
+
+            span {
+
+                font-size: 25px;
+                font-weight: bold;
+                margin-right: 15px;
+
+                @media (max-width:767px) {
+                    font-size: 15px;
+                }
+            }
+
+            .disable-input {
+                opacity: 0.5;
+                pointer-events: none;
+            }
+
+            input {
+                margin: 0px 5px;
+                width: 50px;
+                height: 70px;
+                font-weight: bold;
+                text-align: center;
+                font-size: 35px;
+                font-weight: bolder;
+                caret-color: #F44336;
+                background-color: white;
+                border: none;
+                border-bottom: 3px solid black;
+
+                @media (max-width:767px) {
+                    width: 31px;
+                    height: 60px;
+                }
+
+                &.in-place {
+                    background-color: orange;
+                    color: white;
+                }
+
+                &.not-place {
+                    color: white;
+                    background-color: darkgreen;
+                }
+
+                &.no {
+                    color: white;
+                    background-color: #444;
+                }
+
+                &:focus {
+                    outline-color: #EEE;
+                }
+            }
+        }
+
+        .message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 144px;
+            background-color: white;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 2px 30px 2px black;
+            border-radius: 20px;
+            text-align: center;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-size: 18px;
+
+            p {
+                font-size: 22px;
+                color: tomato;
+            }
+        }
+    }
+
+    .key-colors {
+
+
+        h2 {
+            text-align: center;
+        }
+
+        .key-color {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            background-color: white;
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 10px;
+
+            .key {
+                width: 25px;
+                height: 25px;
+                border-radius: 10px;
+
+                &.in-place {
+                    background-color: orange;
+                }
+
+                &.not-place {
+                    background-color: darkgreen;
+                }
+
+                &.no {
+                    background-color: #444;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .guess-game {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+}
